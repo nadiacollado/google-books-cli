@@ -1,11 +1,20 @@
 {
   "name": "google-books-cli",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A Command Line Interface for searching and saving books using the Google Books API",
+  "main": "bin/index.js",
+  "bin": {
+    "google-books": "bin/google-books"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "keywords": [
+    "google-books"
+  ],
+  "author": "Nadia Collado",
   "license": "ISC"
 }
