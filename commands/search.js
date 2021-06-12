@@ -12,7 +12,7 @@ module.exports = async args => {
     if (!books || books === undefined || books.data.totalItems === 0) {
       throw new Error(`No matches were found for your query. Please try a different query.`)
     }
-    // else returns book list
+    // else, returns book list
     return searchResponse(query, books);
   } catch (error) {
     console.log(error)

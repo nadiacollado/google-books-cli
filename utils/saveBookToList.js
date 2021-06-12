@@ -16,7 +16,7 @@ module.exports = async id => {
     // saves book to reading list txt file
     await fs.appendFile('book-list.txt', bookDetails, err => {
       if (err){
-        console.log('Error')
+        console.log(`Error saving book to reading list. Please check save command format and try again.`)
       }
     })
 
