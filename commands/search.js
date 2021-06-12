@@ -1,3 +1,6 @@
+const searchByQuery = require('../utils/searchByQuery')
+const searchResponse = require('../utils/searchResponse')
+
 module.exports = async args => {
   try {
     const query = args.query || args._1;
@@ -7,7 +10,7 @@ module.exports = async args => {
       throw new Error(`No matches were found for your query. Please try a different query.`)
     }
 
-    return books
+    return searchResponse(query, books);
   } catch (error) {
     console.log(error)
   }

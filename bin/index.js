@@ -1,4 +1,5 @@
 const minimist = require('minimist')
+const books = require('../utils/searchByQuery')
 
 module.exports = () => {
   const args = minimist(process.argv.slice(2))
@@ -19,6 +20,9 @@ module.exports = () => {
       break
     case 'help':
       require('../commands/help')(args)
+      break
+    case 'search':
+      require('../commands/search')(args, books)
       break
     default:
       console.error(`"${command}" is not a valid command.`)
