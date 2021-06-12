@@ -1,5 +1,6 @@
 const minimist = require('minimist')
 const books = require('../utils/searchByQuery')
+const boxen = require('boxen')
 
 module.exports = () => {
   const args = minimist(process.argv.slice(2))
@@ -31,7 +32,7 @@ module.exports = () => {
       require('../commands/list')(args, books)
       break
     default:
-      console.error(`"${command}" is not a valid command.`)
+      console.error(boxen(`"${command}" is not a valid command.`))
       break
   }
 }
