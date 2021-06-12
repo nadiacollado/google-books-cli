@@ -1,6 +1,7 @@
 const minimist = require('minimist')
 const books = require('../utils/searchByQuery')
 const boxen = require('boxen')
+const chalk = require('chalk')
 
 const boxenStyle = {
   padding: 1,
@@ -39,7 +40,7 @@ module.exports = () => {
       require('../commands/list')(args, books)
       break
     default:
-      console.error(boxen(`"${command}" is not a valid command.`, boxenStyle))
+      console.error(boxen(chalk.bold.redBright(`"${command}" is not a valid command.`), boxenStyle))
       break
   }
 }
