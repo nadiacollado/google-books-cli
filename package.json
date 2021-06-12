@@ -18,6 +18,7 @@
   "author": "Nadia Collado",
   "license": "ISC",
   "dependencies": {
+    "esm": "^3.2.25",
     "minimist": "^1.2.5"
   }
 }
