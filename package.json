@@ -16,5 +16,8 @@
     "google-books"
   ],
   "author": "Nadia Collado",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "minimist": "^1.2.5"
+  }
 }
