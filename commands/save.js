@@ -1,3 +1,4 @@
+const saveBookToList = require('../utils/saveBookToList');
 const searchById = require('../utils/searchById')
 
 module.exports = async args => {
@@ -5,7 +6,7 @@ module.exports = async args => {
     const id = args.id || args._1
 
     // retrieve correct book from search using id
-    const book = await searchById(id)
+    const book = await saveBookToList(id)
 
     console.log(`
     You have saved "${book.data.volumeInfo.title}" to your reading list!\n
