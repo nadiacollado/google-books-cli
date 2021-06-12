@@ -6,7 +6,6 @@ module.exports = async args => {
 
     // retrieve correct book from search using id
     const book = await searchById(id)
-    console.log(book)
 
     console.log(`
     You have saved "${book.data.volumeInfo.title}" to your reading list!\n
