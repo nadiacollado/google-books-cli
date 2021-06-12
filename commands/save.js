@@ -1,4 +1,4 @@
-const searchById = require("../utils/searchById");
+const searchById = require('../utils/searchById')
 
 module.exports = async args => {
   try {
