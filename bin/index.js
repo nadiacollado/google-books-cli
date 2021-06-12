@@ -25,8 +25,11 @@ module.exports = () => {
       require('../commands/search')(args, books)
       break
     case 'save':
-        require('../commands/save')(args)
-        break
+      require('../commands/save')(args)
+      break
+    case 'list':
+      require('../commands/list')(args, books)
+      break
     default:
       console.error(`"${command}" is not a valid command.`)
       break
