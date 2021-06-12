@@ -18,7 +18,7 @@ module.exports = async args => {
     const books = await searchByQuery(query)
 
     // if book list doesn't exist, returns error
-    if (!books || books === undefined || books.data.totalItems === 0) {
+    if (books.data.totalItems === 0) {
       throw new Error(boxen(chalk.bold.redBright(`No matches were found for your query. Please try a different query.`), boxenStyle))
     }
     // else, returns book list
