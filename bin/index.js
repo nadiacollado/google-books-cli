@@ -21,7 +21,7 @@ module.exports = () => {
       require('../commands/help')(args)
       break
     default:
-      console.log(`${command} is not a valid command.`)
+      console.error(`"${command}" is not a valid command.`)
       break
   }
 }
