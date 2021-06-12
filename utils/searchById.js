@@ -6,7 +6,8 @@ module.exports = async id => {
 
     // retreive book from Google Books API using ID, return book
     const book = await axios.get(`https://www.googleapis.com/books/v1/volumes/${id}`)
-  
+
+    console.log(book)
     return book
   } catch (error) {
     console.log(error)
