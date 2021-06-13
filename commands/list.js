@@ -1,17 +1,13 @@
 const fs = require('fs')
 const boxen = require('boxen')
-const boxenStyle = {
-  padding: 1,
-  margin: 1,
-  borderStyle: 'double',
-  borderColor: 'cyan',
-}
+const Style = require('../utils/style')
 
 module.exports = async () => {
+  const style = new Style()
   await fs.readFile('book-list.txt', (err, data) => {
     if (err) throw err
     else {
-      console.log(boxen(`\nReading list: \n\n${data}`, boxenStyle))
+      console.log(boxen(`\nReading list: \n\n${data}`, style.box))
     }
   })
 }
