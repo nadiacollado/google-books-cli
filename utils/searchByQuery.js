@@ -1,15 +1,18 @@
 const axios = require('axios')
+const boxen = require('boxen')
+const Style = require('../utils/style')
+
 
 module.exports = async query => {
   try {
-
+    const style = new Style()
     // checks if query exists, if it doesn't, throw error
     if (query === undefined || !query || query === true && query !== 'true') {
-      throw new Error(`
-      Your query did not yield any results. \n
-      Please make sure you have correctly formatted your search. The correct format for the search command is as follows: \n
+      throw new Error(boxen(style.error(`
+      Your query did not yield any results.\n`)
+      `Please make sure you have correctly formatted your search. The correct format for the search command is as follows: \n
       google-books search --query "search query"
-      `)
+      `, style.box))
     }
 
     // retrives book list from Google Books API using query
