@@ -1,16 +1,10 @@
 const minimist = require('minimist')
-const books = require('../utils/searchByQuery')
 const boxen = require('boxen')
-const chalk = require('chalk')
-
-const boxenStyle = {
-  padding: 1,
-  margin: 1,
-  borderStyle: 'double',
-  borderColor: 'cyan',
-}
+const Style = require('../utils/style')
+const books = require('../utils/searchByQuery')
 
 module.exports = () => {
+  const style = new Style()
   const args = minimist(process.argv.slice(2))
   
   let command = args._[0] || 'help'
@@ -40,7 +34,8 @@ module.exports = () => {
       require('../commands/list')(args, books)
       break
     default:
-      console.error(boxen(chalk.bold.redBright(`"${command}" is not a valid command.`), boxenStyle))
+      const errorMessage = style.error(`"${command}" is not a valid command. Please submit a valid command.`)
+      console.error(boxen(`\n ${errorMessage} \n \n For command options, please use the following help command: google-books help \n`, style.box))
       break
   }
 }
