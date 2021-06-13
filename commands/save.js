@@ -1,15 +1,11 @@
 const saveBookToList = require('../utils/saveBookToList')
 const boxen = require('boxen')
+const Style = require('../utils/style')
 
-const boxenStyle = {
-  padding: 1,
-  margin: 1,
-  borderStyle: 'double',
-  borderColor: 'cyan',
-}
 
 module.exports = async args => {
   try {
+    const style = new Style()
     const id = args.id || args._1
 
     // retrieves correct book from search using id
@@ -22,7 +18,7 @@ module.exports = async args => {
     Author(s): ${book.data.volumeInfo.authors}
     Publisher: ${book.data.volumeInfo.publisher}
     ID: ${book.data.id}
-    `, boxenStyle
+    `, style.box
     ))
   } catch (error) {
     console.error(error)

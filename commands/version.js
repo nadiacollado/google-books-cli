@@ -1,13 +1,8 @@
 const { version } = require('../package.json')
 const boxen = require('boxen')
-
-const boxenStyle = {
-  padding: 1,
-  margin: 1,
-  borderStyle: 'double',
-  borderColor: 'cyan',
-}
+const Style = require('../utils/style')
 
 module.exports = () => {
-  console.log(boxen(`v${version}`, boxenStyle))
+  const style = new Style()
+  console.log(boxen(`v${version}`, style.box))
 }

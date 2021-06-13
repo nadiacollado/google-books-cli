@@ -4,6 +4,8 @@ const Style = require('../utils/style')
 
 module.exports = async () => {
   const style = new Style()
+
+  // retrieves book list from text file
   await fs.readFile('book-list.txt', (err, data) => {
     if (err) throw err
     else {
