@@ -3,6 +3,7 @@ const Style = require('../utils/style')
 
 module.exports = (query, books) => {
   const style = new Style()
+  
   try {
     console.log(boxen(`
     Below please find 5 books based on your "${query}" search query. \n \n

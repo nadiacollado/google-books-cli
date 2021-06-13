@@ -12,7 +12,8 @@ module.exports = async args => {
     const book = await saveBookToList(id)
 
     // prints saved book details
-    console.log(boxen(`\nYou have saved "${book.data.volumeInfo.title}" to your reading list!\n
+    console.log(boxen(`
+    You have saved "${book.data.volumeInfo.title}" to your reading list!\n
     Book details:\n
     Title: ${book.data.volumeInfo.title}
     Author(s): ${book.data.volumeInfo.authors}
