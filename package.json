@@ -20,6 +20,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "boxen": "^4.0.0",
+    "chai": "^4.3.4",
     "chalk": "^2.4.2",
     "esm": "^3.2.25",
     "minimist": "^1.2.5",
