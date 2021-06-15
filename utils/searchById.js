@@ -17,6 +17,6 @@ module.exports = async id => {
 
     return book
   } catch (error) {
-    console.log(error)
+    console.error(error)
   }
 };

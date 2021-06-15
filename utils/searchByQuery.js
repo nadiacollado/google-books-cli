@@ -26,6 +26,6 @@ module.exports = async query => {
     // returns book list
     return books
   } catch (error) {
-    console.log(error)
+    console.error(error)
   }
 };

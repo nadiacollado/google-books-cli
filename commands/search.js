@@ -18,6 +18,6 @@ module.exports = async args => {
     // else, returns book list
     return searchResponse(query, books);
   } catch (error) {
-    console.log(error)
+    console.error(error)
   }
 };
