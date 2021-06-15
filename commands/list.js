@@ -11,6 +11,7 @@ module.exports = async () => {
       if (err) throw err
       else {
       console.log(boxen(`\nReading list: \n\n${data}`, style.box))
+      return boxen(`\nReading list: \n\n${data}`, style.box)
       }
     })
   } catch (error){
