@@ -2,7 +2,7 @@
 
 ### System Requirements
 
-To use the Google-Books-Cli, you need to have Git, Node and NPM installed on your development machine. 
+To use the Google-Books-Cli, you need to have [Git](https://git-scm.com/), [Node, and NPM](https://nodejs.org/en/) installed on your development machine. 
 
 ### Instructions
 
