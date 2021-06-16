@@ -4,3 +4,8 @@
       Publisher: Bloomsbury
       ID: 35rHBAAAQBAJ
     
+      Title: Harry Potter
+      Authors: J. K. Rowling
+      Publisher: Scholastic Incorporated
+      ID: 1XP_tQEACAAJ
+    
