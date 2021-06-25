@@ -7,16 +7,12 @@ const searchResponse = require('../utils/searchResponse')
 module.exports = async (query, developmentMode) => {
   try {
     const style = new Style()
-    const errorMessage = style.error(`Your query did not yield any results.\n`)
+    const errorMessage = style.error(`Your query did not yield any results.`)
 
     // checks if query exists, if it doesn't, throw error
     if (query === undefined || !query || query === true && query !== 'true') {
 
-      throw new Error((boxen(`
-      ${errorMessage}
-      Please make sure you have correctly formatted your search. The correct format for the search command is as follows: \n
-      google-books search --query "search query"
-      `, style.box)))
+      throw new Error((boxen(`${errorMessage}\n\nPlease make sure you have correctly formatted your search.\nThe correct format for the search command is as follows:\n\ngoogle-books search --query "search query"`, style.box)))
     } else {
 
       // retrieves book list from Google Books API using query
@@ -27,7 +23,9 @@ module.exports = async (query, developmentMode) => {
       // checks if books returned anything, if not, throws error
       if (books.data.totalItems === 0) {
         throw new Error(boxen(style.error(`No matches were found for your query. Please try a different query.`), style.box))
+
       } else {
+
         // calls response func and returns results from Google API
         return searchResponse(query, books)
       }
