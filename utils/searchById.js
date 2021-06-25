@@ -4,16 +4,13 @@ const Style = require('../utils/style')
 
 
 module.exports = async (id, developmentMode) => {
+  const style = new Style()
   try {
-    const style = new Style()
     const errorMessage = style.error(`Invalid ID.\n`)
     
     // checks if id exists and if it's valid, if it doesn't, throw error and return
     if (!id || id === undefined || typeof id !== 'string'){
-      throw new Error(boxen(`${errorMessage}
-      Check ID spelling. Also, please make sure you have correctly formatted your entry.\n
-      The correct format for the save command is as follows: \n
-      google-books save --id idNumber`, style.box))
+      throw new Error(boxen(`${errorMessage}\nCheck ID spelling. Also, please make sure you have correctly formatted your entry.\nThe correct format for the save command is as follows: \n\ngoogle-books save --id idNumber`, style.box))
     }
 
     // retrieves book from Google Books API using ID, return book
@@ -25,7 +22,12 @@ module.exports = async (id, developmentMode) => {
     if (developmentMode) {
       return error
     }
-    // else, prints custom Error message for user
-    console.error(error.message)
+    // else, checks if error is 503 code
+    if (error.message === 'Request failed with status code 503'){
+      const error = style.error(`Error.`)
+      console.log(boxen(`${error}\n\nThe server is currently unable to process your request.\nThis is likely due to an invalid ID entry. Please try again.`, style.box))
+    } else {
+      console.error(error.message)
+    }
   }
 }
