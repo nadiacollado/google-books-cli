@@ -24,4 +24,4 @@ module.exports = (query, books) => {
   } catch (error) {
     return error
   }
-};
+}

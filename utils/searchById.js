@@ -6,10 +6,14 @@ const Style = require('../utils/style')
 module.exports = async (id, developmentMode) => {
   try {
     const style = new Style()
+    const errorMessage = style.error(`Invalid ID.\n`)
     
     // checks if id exists and if it's valid, if it doesn't, throw error and return
     if (!id || id === undefined || typeof id !== 'string'){
-      throw new Error(boxen(style.error(`Invalid ID. Check ID spelling and try again.`), style.box))
+      throw new Error(boxen(`${errorMessage}
+      Check ID spelling. Also, please make sure you have correctly formatted your entry.\n
+      The correct format for the save command is as follows: \n
+      google-books save --id idNumber`, style.box))
     }
 
     // retrieves book from Google Books API using ID, return book
@@ -17,11 +21,11 @@ module.exports = async (id, developmentMode) => {
 
     return book
   } catch (error) {
+    // if in dev mode, return Error obj so it can be printed to console
     if (developmentMode) {
       return error
     }
     // else, prints custom Error message for user
     console.error(error.message)
   }
-
-};
+}

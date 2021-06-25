@@ -4,3 +4,8 @@
       Publisher: Open Court Publishing
       ID: Gz8t2MttEQUC
     
+      Title: Harry Potter and Philosophy
+      Authors: David Baggett
+      Publisher: Open Court Publishing
+      ID: Gz8t2MttEQUC
+    

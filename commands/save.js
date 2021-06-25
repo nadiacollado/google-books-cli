@@ -22,12 +22,12 @@ module.exports = async (args, developmentMode) => {
     `, style.box
     ))
   } catch (error) {
-       // checks is dev mode is true, prints Error if so
-       if (developmentMode) {
-        console.error(error)
-      } else {
-        // else, returns without Error obj
-        return
-      }
+    // checks is dev mode is true, prints Error if so
+    if (developmentMode) {
+      console.error(error)
+    } else {
+      // else, returns without Error obj
+      return
     }
-};
+  }
+}
