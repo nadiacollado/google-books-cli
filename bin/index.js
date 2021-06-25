@@ -31,7 +31,7 @@ module.exports = () => {
       require('../commands/search')(args, developmentMode, books)
       break
     case 'save':
-      require('../commands/save')(args)
+      require('../commands/save')(args, developmentMode)
       break
     case 'list':
       require('../commands/list')(args, books)

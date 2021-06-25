@@ -1,6 +1,7 @@
 const axios = require('axios')
 const boxen = require('boxen')
 const Style = require('../utils/style')
+const searchResponse = require('../utils/searchResponse')
 
 
 module.exports = async (query, developmentMode) => {
@@ -24,12 +25,12 @@ module.exports = async (query, developmentMode) => {
       )
 
       // checks if books returned anything, if not, throws error
-      // if (books.data.totalItems === 0) {
-      //   throw new Error(boxen(style.error(`No matches were found for your query. Please try a different query.`), style.box))
-      // }
-
-       // returns book list
-      return books
+      if (books.data.totalItems === 0) {
+        throw new Error(boxen(style.error(`No matches were found for your query. Please try a different query.`), style.box))
+      } else {
+        // calls response func and returns results from Google API
+        return searchResponse(query, books)
+      }
     }
   } catch (error) {
     // checks if dev mode is true, if so, returns the Error obj to search command

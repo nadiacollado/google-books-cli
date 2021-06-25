@@ -3,13 +3,13 @@ const boxen = require('boxen')
 const Style = require('../utils/style')
 
 
-module.exports = async args => {
+module.exports = async (args, developmentMode) => {
   try {
     const style = new Style()
     const id = args.id || args._1
 
     // retrieves correct book from search using id
-    const book = await saveBookToList(id)
+    const book = await saveBookToList(id, developmentMode)
 
     // prints saved book details
     console.log(boxen(`
@@ -22,6 +22,12 @@ module.exports = async args => {
     `, style.box
     ))
   } catch (error) {
-    console.error(error)
-  }
+       // checks is dev mode is true, prints Error if so
+       if (developmentMode) {
+        console.error(error)
+      } else {
+        // else, returns without Error obj
+        return
+      }
+    }
 };

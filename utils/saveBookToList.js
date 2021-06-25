@@ -27,6 +27,6 @@ module.exports = async id => {
     // returns with book info for user message
     return book
   } catch (error) {
-    console.error(error)
+    return error
   }
 };

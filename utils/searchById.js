@@ -3,7 +3,7 @@ const boxen = require('boxen')
 const Style = require('../utils/style')
 
 
-module.exports = async id => {
+module.exports = async (id, developmentMode) => {
   try {
     const style = new Style()
     
@@ -17,6 +17,11 @@ module.exports = async id => {
 
     return book
   } catch (error) {
-    console.error(error)
+    if (developmentMode) {
+      return error
+    }
+    // else, prints custom Error message for user
+    console.error(error.message)
   }
+
 };

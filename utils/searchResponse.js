@@ -6,7 +6,7 @@ module.exports = (query, books) => {
   const style = new Style()
   
   try {
-    // returns search query response from Google Books API
+    // returns formatted results from Google Books API
     console.log(boxen(`
     Below please find 5 books based on your "${query}" search query. \n \n
     To save a book to your reading list, copy its ID and use it in the following command: \n \n
@@ -22,6 +22,6 @@ module.exports = (query, books) => {
       `)
     })
   } catch (error) {
-    console.error(error)
+    return error
   }
 };
