@@ -66,10 +66,8 @@ Use npm's test command to run tests in the console:
 
 [Minimist](https://www.npmjs.com/package/minimist)
 
-[Mocha](https://mochajs.org/)
-
-[Chai](https://www.chaijs.com/)
-
 [Boxen](https://www.npmjs.com/package/boxen)
 
 [Chalk](https://www.npmjs.com/package/chalk)
+
+[Jest](https://jestjs.io/)
