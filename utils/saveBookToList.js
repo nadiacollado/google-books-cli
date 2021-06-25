@@ -29,4 +29,4 @@ module.exports = async id => {
   } catch (error) {
     return error
   }
-};
+}
