@@ -17,7 +17,6 @@ module.exports = (query, books) => {
       ID: ${book.id}
       `)
     })
-    console.log(books.data.items.volumeInfo.authors)
   } catch (error) {
     return error
   }
