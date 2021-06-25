@@ -6,6 +6,9 @@ const books = require('../utils/searchByQuery')
 module.exports = () => {
   const style = new Style()
   const args = minimist(process.argv.slice(2))
+
+  // For developers, toggle this to true to inspect errors via the Error object
+  let developmentMode = false
   
   let command = args._[0] || 'help'
 
@@ -25,7 +28,7 @@ module.exports = () => {
       require('../commands/help')(args)
       break
     case 'search':
-      require('../commands/search')(args, books)
+      require('../commands/search')(args, developmentMode, books)
       break
     case 'save':
       require('../commands/save')(args)
