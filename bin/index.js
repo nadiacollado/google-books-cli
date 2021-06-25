@@ -1,7 +1,8 @@
-const minimist = require('minimist')
-const boxen = require('boxen')
-const Style = require('../utils/style')
 const books = require('../utils/searchByQuery')
+const boxen = require('boxen')
+const minimist = require('minimist')
+const Style = require('../utils/style')
+const { version } = require('../package.json')
 
 module.exports = () => {
   const style = new Style()
@@ -22,7 +23,7 @@ module.exports = () => {
 
   switch(command){
     case 'version':
-      require('../commands/version')(args)
+      require('../commands/version')(args, version)
       break
     case 'help':
       require('../commands/help')(args)
