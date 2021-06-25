@@ -19,5 +19,6 @@ module.exports = async args => {
     return searchResponse(query, books);
   } catch (error) {
     console.error(error)
+    return error
   }
 };

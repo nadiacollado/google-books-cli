@@ -8,7 +8,9 @@ module.exports = async () => {
     
     // retrieves book list from text file
     await fs.readFile('book-list.txt', (err, data) => {
-      if (err) throw err
+      if (err) {
+        console.error(`There's been an issue finding your list!\n${err}`)
+      }
       else {
       console.log(boxen(`\nReading list: \n\n${data}`, style.box))
       return boxen(`\nReading list: \n\n${data}`, style.box)

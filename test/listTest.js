@@ -8,6 +8,6 @@ const style = new Style()
 
 describe('List', function() {
   it('returns saved book list', function() {
-    assert.equal(list(), boxen(data, style.box))
+    assert.strictEqual(list(), boxen(data, style.box))
   })
 })
