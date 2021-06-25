@@ -10,7 +10,7 @@ module.exports = async (id, developmentMode) => {
     
     // checks if id exists and if it's valid, if it doesn't, throw error and return
     if (!id || id === undefined || typeof id !== 'string'){
-      throw new Error(boxen(`${errorMessage}\nCheck ID spelling. Also, please make sure you have correctly formatted your entry.\nThe correct format for the save command is as follows: \n\ngoogle-books save --id idNumber`, style.box))
+      throw new Error(boxen(`${errorMessage}\nCheck ID spelling. Also, please make sure you have correctly formatted your entry.\nThe correct format for the save command is as follows: \n\ngoogle-books save --id yourBookIDHere`, style.box))
     }
 
     // retrieves book from Google Books API using ID, return book
