@@ -1,5 +1,5 @@
-const saveBookToList = require('../utils/saveBookToList')
 const boxen = require('boxen')
+const saveBookToList = require('../utils/saveBookToList')
 const Style = require('../utils/style')
 
 

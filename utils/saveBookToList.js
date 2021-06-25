@@ -1,6 +1,6 @@
+const boxen = require('boxen')
 const fs = require('fs')
 const searchById = require('../utils/searchById')
-const boxen = require('boxen')
 const Style = require('../utils/style')
 
 module.exports = async id => {

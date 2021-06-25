@@ -1,8 +1,7 @@
 const axios = require('axios')
 const boxen = require('boxen')
-const Style = require('../utils/style')
 const searchResponse = require('../utils/searchResponse')
-
+const Style = require('../utils/style')
 
 module.exports = async (query, developmentMode) => {
   try {

@@ -1,5 +1,5 @@
-const fs = require('fs')
 const boxen = require('boxen')
+const fs = require('fs')
 const Style = require('../utils/style')
 
 module.exports = async () => {

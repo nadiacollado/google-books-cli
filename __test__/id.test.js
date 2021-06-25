@@ -1,7 +1,7 @@
-const mockAxios = require('axios')
-const idTestData = require('../__fixtures__/queryIdData')
-const searchById = require('../utils/searchById')
 const boxen = require('boxen')
+const idTestData = require('../__fixtures__/queryIdData')
+const mockAxios = require('axios')
+const searchById = require('../utils/searchById')
 const Style = require('../utils/style')
 
 
@@ -26,7 +26,7 @@ describe('searchById.js', () => {
     const idError = boxen(`${errorMessage}\nCheck ID spelling. Also, please make sure you have correctly formatted your entry.\nThe correct format for the save command is as follows: \n\ngoogle-books save --id idNumber`, style.box)
 
     const error = await searchById()
-    
+
     expect(error.message).toBe(idError)
     expect(error.name).toBe('Error')
   })
