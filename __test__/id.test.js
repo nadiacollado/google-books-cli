@@ -24,8 +24,6 @@ describe('searchById.js', () => {
     const style = new Style()
     const errorMessage = style.error(`Invalid ID.\n`)
     const idError = boxen(`${errorMessage}\nCheck ID spelling. Also, please make sure you have correctly formatted your entry.\nThe correct format for the save command is as follows: \n\ngoogle-books save --id idNumber`, style.box)
-
-    console.log(idError)
     const error = await searchById()
 
     expect(error.message).toBe(idError)

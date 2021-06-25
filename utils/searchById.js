@@ -28,6 +28,7 @@ module.exports = async (id, developmentMode) => {
       console.log(boxen(`${error}\n\nThe server is currently unable to process your request.\nThis is likely due to an invalid ID entry. Please try again.`, style.box))
     } else {
       console.error(error.message)
+      return error
     }
   }
 }
