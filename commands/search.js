@@ -12,16 +12,14 @@ module.exports = async (args, developmentMode) => {
     // retrieves book list from Google Books API
     const books = await searchByQuery(query, developmentMode)
 
-    if (books.data.totalItems === 0) {
-      throw new Error(boxen(style.error(`No matches were found for your query. Please try a different query.`), style.box))
-    }
-
     return searchResponse(query, books)
   } catch (error) {
+    // checks is dev mode is true, prints Error if so
     if (developmentMode) {
       console.error(error)
     } else {
+      // else, returns without Error obj
       return
     }
   }
-};
+}
